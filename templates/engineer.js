@@ -1,9 +1,17 @@
-// const inquirer = require("inquirer");
+const inquirer = require("inquirer");
 
 class Engineer {
 
     engineerInfo() {
-        console.log("This is engineer info.");
+        inquirer.prompt([
+            {
+                type: 'input', 
+                name: 'usernameGitHub',
+                message: 'What is the Engineer\'s GitHub username?'
+            }
+        ]).then (reply => {
+            console.log(`https://github.com/${reply.usernameGitHub}`);
+            })
     }
 
 }

@@ -11,9 +11,8 @@ class Manager {
                 message: 'What is the manager\'s office number?'
             },
         ]).then (reply => {
-     
             console.log(reply.officeNumber);
-        })
+            })
     }
 
 }
