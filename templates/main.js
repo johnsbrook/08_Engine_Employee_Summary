@@ -3,9 +3,17 @@ const Manager = require("./manager.js");
 const Engineer = require("./engineer.js");
 const Intern = require("./intern.js");
 
+
 class Employee {
 
+
+
     employeeName() {
+
+    const manager = new Manager();
+    const engineer = new Engineer();
+    const intern = new Intern();
+
         inquirer.prompt([
             {
                 type: 'input',
@@ -33,19 +41,16 @@ class Employee {
 
                 // This conditional will redirect you to manager.js set of questions
                 console.log("This will redirect you to manager.js");
-                const   manager = new Manager();
-                        manager.managerInfo();
+                manager.managerInfo();
 
             } else if (reply.position === "Engineer") {
                 // This conditional will redirect you to engineer.js set of questions
                 console.log("This will redirect you to engineer.js");
-                const   engineer = new Engineer();
-                        engineer.engineerInfo();
+                engineer.engineerInfo();
             } else {
                 // This conditional will redirect you to intern.js set of questions
                 console.log("This will redirect you to intern.js");
-                const   intern = new Intern();
-                        intern.internInfo();
+                intern.internInfo();
             }
         })
     }
