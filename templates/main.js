@@ -25,9 +25,9 @@ class Employee {
             }
         ]).then (reply => {
 
-                console.log(reply.name);
-                console.log(reply.email);
-                console.log(reply.position);
+            console.log(reply.name);
+            console.log(reply.email);
+            console.log(reply.position);
 
             if (reply.position === "Manager") {
 
@@ -48,13 +48,7 @@ class Employee {
                         intern.internInfo();
             }
         })
-
-    
     }
-    // managerInfo() {
-    //         console.log("This is manager info.");
-    // }
-
 }
 
 // Generate Employee ID
