@@ -1,0 +1,91 @@
+ .then( (response) => {
+
+        if (response.title === "Manager") {
+
+            return inquirer.prompt([
+                {
+                type: "input",
+                message: "What's the office number?",
+                name: "element"
+                }
+                
+            ]).then( (response2) => {
+                console.log(response.name);
+                console.log(response.email);
+                console.log(response.title);
+                console.log(response2.element);
+                const manager = new Manager();
+                manager.manager();
+            })
+            
+        } else if (response.title === "Engineer") { 
+            return inquirer.prompt([
+                {
+                type: "input",
+                message: "What's the GitHub username?",
+                name: "element"
+                }
+            ]).then( (response2) => {
+                console.log(response.name);
+                console.log(response.email);
+                console.log(response.title);
+                console.log(response2.element);
+                // const engineer = new Engineer();
+                // engineer.engineer();
+                
+            }).then()
+
+            } else {
+                    return inquirer.prompt([
+                        {
+                        type: "input",
+                        message: "What's the school name?",
+                        name: "element"
+                        }        
+                    ]).then(function(response2){
+                        console.log(response.name);
+                        console.log(response.email);
+                        console.log(response.title);
+                        console.log(response2.element);
+                        const intern = new Intern();
+                        intern.intern();
+                    })
+                }
+        })
+
+
+
+// TODO: Write code to define and export the Employee class
+
+class Employee {
+    
+    constructor (name, email, title) {
+        this.name = name;
+        this.email = email;
+        this.title = title;
+    }
+
+    teamMembers() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What's the name of the employee?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What's the email of the employee?",
+            name: "email"
+        },
+        {
+            type: "list",
+            message: "What's the title of the employee?",
+            name: "title",
+            choices: ["Manager", "Engineer", "Intern"]
+        },
+    ])
+   
+    } 
+    }
+  
+module.exports = Employee;
