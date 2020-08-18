@@ -1,91 +1,75 @@
- .then( (response) => {
+this.email = r.email;
 
-        if (response.title === "Manager") {
 
-            return inquirer.prompt([
-                {
+if (this.role === "Manager") {
+        inquirer.prompt([
+            {
                 type: "input",
-                message: "What's the office number?",
-                name: "element"
-                }
-                
-            ]).then( (response2) => {
-                console.log(response.name);
-                console.log(response.email);
-                console.log(response.title);
-                console.log(response2.element);
-                const manager = new Manager();
-                manager.manager();
-            })
+                message: "What's the manager\'s office number?",
+                name: "officeNumber", 
+            }
+        ]).then(function(r2) {
+            this.officeNumber = r2.officeNumber;
+
+            console.log(this.name);
+            console.log(this.id);
+            console.log(this.email);
+            console.log(this.role);
+            console.log(this.officeNumber);
+
+            const manager = new Manager(this.name, this.id, this.email, this.officeNumber);
+            console.log(manager);
             
-        } else if (response.title === "Engineer") { 
-            return inquirer.prompt([
-                {
-                type: "input",
-                message: "What's the GitHub username?",
-                name: "element"
-                }
-            ]).then( (response2) => {
-                console.log(response.name);
-                console.log(response.email);
-                console.log(response.title);
-                console.log(response2.element);
-                // const engineer = new Engineer();
-                // engineer.engineer();
-                
-            }).then()
-
-            } else {
-                    return inquirer.prompt([
-                        {
-                        type: "input",
-                        message: "What's the school name?",
-                        name: "element"
-                        }        
-                    ]).then(function(response2){
-                        console.log(response.name);
-                        console.log(response.email);
-                        console.log(response.title);
-                        console.log(response2.element);
-                        const intern = new Intern();
-                        intern.intern();
-                    })
-                }
+            team.push(manager);
+            
+        }).then(function() {
+            addMore(); 
         })
 
+    } else if (this.role === "Engineer") {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What's the engineer\'s github username?",
+                name: "github", 
+            }
 
+        ]).then(function(r3) {
+            this.github = r3.github;
 
-// TODO: Write code to define and export the Employee class
+            console.log(this.name);
+            console.log(this.id);
+            console.log(this.email);
+            console.log(this.role);
+            console.log(this.github);
 
-class Employee {
-    
-    constructor (name, email, title) {
-        this.name = name;
-        this.email = email;
-        this.title = title;
-    }
+            const engineer = new Engineer(this.name, this.id, this.email, this.github);
+            console.log(engineer)
+            team.push(engineer);
+            
+            
+            }).then(function() {
+                addMore(); 
+            })
 
-    teamMembers() {
-    return inquirer.prompt([
-        {
-            type: "input",
-            message: "What's the name of the employee?",
-            name: "name"
-        },
-        {
-            type: "input",
-            message: "What's the email of the employee?",
-            name: "email"
-        },
-        {
-            type: "list",
-            message: "What's the title of the employee?",
-            name: "title",
-            choices: ["Manager", "Engineer", "Intern"]
-        },
-    ])
-   
-    } 
-    }
-  
-module.exports = Employee;
+        } else {
+            inquirer.prompt([
+                {
+                type: 'input',
+                message: "What's the Intern\'s school name?",
+                name: 'school'
+                }
+            ]).then(function(r2){
+                this.school = r2.school;
+                console.log(this.school);
+
+                const school = new Intern(this.name, this.id, this.email, this.school);                
+                console.log(school);
+                team.push(school);
+                
+
+            }).then(function() {
+                addMore(); 
+            })
+        }    
+    })
