@@ -27,7 +27,7 @@ The Engine Employee Summary allows the user to create the profile of each team m
 
 ## Usage Information 
  
-To run this applicaton, ensure the code editor (such as VS Code) that has Node.js installed. Proceed to open Terminal (in Mac or VS Code) or Git (if using Windows) and type node app and hit 'Enter'. A set of questions will be prompted and ensure the email address is in this format (email@email.com) to pass validation. Once the application finishes running, the team.html file will be generated in the 'Output' folder.  
+To run this applicaton, ensure the code editor (such as VS Code) that has Node.js installed. Proceed to open Terminal (in Mac or VS Code) or Git (if using Windows) and, after reaching the correct path, type 'node app' and hit 'Enter'. A set of questions will be prompted and ensure the email address is in this format (email@email.com) to pass validation. Once the application finishes running, the team.html file will be generated in the 'Output' folder.  
 
 
 ## Installation Instructions 
