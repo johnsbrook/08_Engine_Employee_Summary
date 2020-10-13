@@ -69,20 +69,14 @@ function start() {
                   .then(function (r2) {
                     this.officeNumber = r2.officeNumber;
 
-                    console.log(this.name);
-                    console.log(this.id);
-                    console.log(this.email);
-                    console.log(this.role);
-                    console.log(this.officeNumber);
-
+                                                                                                    
                     const manager = new Manager(
                       this.name,
                       this.id,
                       this.email,
                       this.officeNumber
                     );
-                    console.log(manager);
-
+                    
                     team.push(manager);
                   })
                   .then(function () {
@@ -100,20 +94,14 @@ function start() {
                   .then(function (r3) {
                     this.github = r3.github;
 
-                    console.log(this.name);
-                    console.log(this.id);
-                    console.log(this.email);
-                    console.log(this.role);
-                    console.log(this.github);
-
+                                                                                                    
                     const engineer = new Engineer(
                       this.name,
                       this.id,
                       this.email,
                       this.github
                     );
-                    console.log(engineer);
-                    team.push(engineer);
+                                        team.push(engineer);
                   })
                   .then(function () {
                     addMore();
@@ -129,24 +117,21 @@ function start() {
                   ])
                   .then(function (r2) {
                     this.school = r2.school;
-                    console.log(this.school);
-
+                    
                     const school = new Intern(
                       this.name,
                       this.id,
                       this.email,
                       this.school
                     );
-                    console.log(school);
-                    team.push(school);
+                                        team.push(school);
                   })
                   .then(function () {
                     addMore();
                   });
               }
             } else {
-              console.log("Please, enter a valid email address.");
-              email();
+                            email();
             }
           });
       }
@@ -179,11 +164,9 @@ function buildTeamProfile() {
   }
   fs.writeFile(outputFile, render(team), "utf8", function (error) {
     if (error) {
-      console.log(error);
-      return;
+            return;
     }
-    console.log("Success!");
-  });
+      });
 }
 
 start();
