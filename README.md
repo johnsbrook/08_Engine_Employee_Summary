@@ -4,7 +4,8 @@
 
 ## Description 
  
-The Engine Employee Summary allows the user to create the profile of each team member and add unique properties about each employee depending on their role.  
+The Engine Employee Summary is a Node.js app that allows the user to create the profile of each team member and add unique properties about each employee depending on their role.
+
 
 
 ## Table of Contents 
